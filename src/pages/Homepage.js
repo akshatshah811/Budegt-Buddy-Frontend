@@ -96,7 +96,7 @@ const Homepage = () => {
   const handleDelete = async (record) => {
     try {
       setLoading(true);
-      await axios.post("/api/v1/transactions/delete-transaction", {
+      await axios.post("https://budegt-buddy-backend.vercel.app/api/v1/transactions/delete-transaction", {
         transactionId: record._id,
       });
       setLoading(false);
@@ -115,7 +115,7 @@ const Homepage = () => {
       const user = JSON.parse(localStorage.getItem("user"));
       setLoading(true);
       if (editable) {
-        await axios.post("/api/v1/transactions/edit-transaction", {
+        await axios.post("https://budegt-buddy-backend.vercel.app/api/v1/transactions/edit-transaction", {
           payload: {
             ...values,
             userId: user._id,
@@ -125,7 +125,7 @@ const Homepage = () => {
         setLoading(false);
         message.success("Transaction Edited Successfully");
       } else {
-        await axios.post("/api/v1/transactions/add-transaction", {
+        await axios.post("https://budegt-buddy-backend.vercel.app/api/v1/transactions/add-transaction", {
           ...values,
           userId: user._id,
         });

@@ -11,7 +11,7 @@ const Register = () => {
   const submitHandler = async (values) => {
     try {
       setLoading(true);
-      await axios.post("/api/v1/users/register", values);
+      await axios.post("https://budegt-buddy-backend.vercel.app/api/v1/users/register", values);
       message.success("Registration Successful");
       setLoading(false);
       navigate("/login");
