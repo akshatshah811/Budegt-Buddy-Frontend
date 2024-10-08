@@ -10,7 +10,7 @@ const Login = () => {
   const submitHandler = async (values) => {
     try {
       setLoading(true);
-      const { data } = await axios.post("/api/v1/users/login", values);
+      const { data } = await axios.post("https://budegt-buddy-backend.vercel.app/api/v1/users/login", values);
       setLoading(false);
       message.success("Login Successful");
       localStorage.setItem(
