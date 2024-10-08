@@ -73,7 +73,7 @@ const Homepage = () => {
     try {
       const user = JSON.parse(localStorage.getItem("user"));
       setLoading(true);
-      const res = await axios.post("/api/v1/transactions/all-transactions", {
+      const res = await axios.post("https://budegt-buddy-backend.vercel.app/api/v1/transactions/all-transactions", {
         userId: user._id,
         duration,
         selectedDate,
